@@ -1,0 +1,37 @@
+﻿@{
+Layout = Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>title</title>
+</head>
+<body>
+<div>
+  <h1>Cadastrando Atividade</h1>
+    <form method="post" action="/confirmarCadastrarTodo">
+      <div class="form-group">
+        <div class="col-md-8 mb-3">
+          <label>Nome da Atividade</label>
+          <input type="text" class="form-control " name="nome" placeholder="Nome da Atividade" required>
+        </div>
+        <div class="col-md-8 mb-3">
+          <label>Responsável</label>
+          <input type="text" class="form-control" name="responsavel" placeholder="Responsável" required>
+        </div>
+        <div class="col-md-8 mb-3">
+          <label>Descrição</label>
+          <input type="text" class="form-control" name="descricao" placeholder="Descrição" required>
+        </div>
+        <div class="col-md-8 mb-3">
+          <label>Data Atividade</label>
+          <input type="date" class="form-control" name="dataAtividade" placeholder="Data da Atividade" required>
+        </div>
+      </div>
+        <button class="btn btn-primary d-flex" type="submit">Cadastrar</button>
+    </form>
+</div>
+</body>
+</html>

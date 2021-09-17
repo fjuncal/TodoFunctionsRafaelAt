@@ -1,0 +1,41 @@
+﻿@model TodoItem;
+
+@{
+  Layout = "/Views/Shared/_Layout.cshtml";
+  var todoItem = Model;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Editar Todo</title>
+</head>
+<body>
+<div>
+    <h1>Editando Atividade</h1>
+  <form method="post" action="/confirmarEditarTodo">
+    <input type="hidden" value="@todoItem.Id" name="id">
+    <div class="form-group">
+      <div class="col-md-8 mb-3">
+        <label>Nome da Atividade</label>
+        <input type="text" class="form-control " name="nome" placeholder="Nome da Atividade" value="@todoItem.Nome" required>
+      </div>
+      <div class="col-md-8 mb-3">
+        <label>Responsável</label>
+        <input type="text" class="form-control" name="responsavel" placeholder="Responsável" value="@todoItem.Responsavel" required>
+      </div>
+      <div class="col-md-8 mb-3">
+        <label>Descrição</label>
+        <input type="text" class="form-control" name="descricao" placeholder="Descrição" value="@todoItem.Descricao" required>
+      </div>
+      <div class="col-md-8 mb-3">
+        <label>Data Atividade</label>
+        <input type="date" class="form-control" name="dataAtividade" placeholder="Data da Atividade" value="@todoItem.DataAtividade" required>
+      </div>
+    </div>
+    <button class="btn btn-primary d-flex" type="submit">Editar</button>
+  </form>
+  </div>
+</body>
+</html>

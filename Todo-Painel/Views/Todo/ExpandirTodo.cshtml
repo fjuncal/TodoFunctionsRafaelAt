@@ -1,0 +1,56 @@
+﻿@model TodoItem;
+@{
+    Layout = Layout = "/Views/Shared/_Layout.cshtml";
+    var todoItem = Model;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Expandir Todo</title>
+</head>
+<body>
+<div>
+    <div class="card d-flex" style="width: 35rem;">
+      <img class="card-img-top" src="https://clickup.com/blog/wp-content/uploads/2019/01/to-do-list-apps.png" alt="Imagem de capa do card">
+      <div class="card-body">
+          <h5 class="card-title" style="text-align: center"><b>Nome</b>: @todoItem.Nome</h5>
+        <p class="card-text"><b>Descrição</b>: @todoItem.Descricao</p>
+      </div>
+      <ul class="list-group list-group-flush">
+          <li class="list-group-item"><b>Responsável</b>: @todoItem.Responsavel</li>
+          <li class="list-group-item"><b>Data Atividade</b>: @todoItem.DataAtividade</li>
+          @{
+              if (@todoItem.EstaFeita == false)
+              {
+                  <li class="list-group-item"><b>Status</b>: Atividade Incompleta</li>
+              }
+              else
+              {
+                  <li class="list-group-item"><b>Status</b>: Atividade Completa</li>
+
+              }
+
+          }
+      </ul>
+      <div class="card-body" style="text-align: center">
+          <a href="/listarTodos" class="card-link">Voltar para a lista</a>
+           <form action="/alterarStatus" method="get">
+               <input type="hidden" value="@todoItem.Id" name="id">
+               @{
+                   if (todoItem.EstaFeita == false)
+                   {
+                       <input type="submit" class="btn btn-success" value="Marcar Como concluida">
+                   }
+                   else
+                   {
+                       <input type="submit" class="btn btn-danger" value="Marcar Como incompleta">
+                   }
+               }
+           </form>
+      </div>
+    </div>
+</div>
+</body>
+</html>

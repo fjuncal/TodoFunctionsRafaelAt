@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Comum", "Comum\Comum.csproj", "{D88E20A6-9642-418D-8C84-1D8B5FC0D084}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoFunctionsApi", "TodoFunctionsApi\TodoFunctionsApi.csproj", "{61D8392D-B02B-4167-8E25-7AC3D08FD2AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo-Painel", "Todo-Painel\Todo-Painel.csproj", "{5D78931E-3000-4802-AFCE-62113B87377F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D88E20A6-9642-418D-8C84-1D8B5FC0D084}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D88E20A6-9642-418D-8C84-1D8B5FC0D084}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D88E20A6-9642-418D-8C84-1D8B5FC0D084}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D88E20A6-9642-418D-8C84-1D8B5FC0D084}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61D8392D-B02B-4167-8E25-7AC3D08FD2AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61D8392D-B02B-4167-8E25-7AC3D08FD2AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61D8392D-B02B-4167-8E25-7AC3D08FD2AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61D8392D-B02B-4167-8E25-7AC3D08FD2AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D78931E-3000-4802-AFCE-62113B87377F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D78931E-3000-4802-AFCE-62113B87377F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D78931E-3000-4802-AFCE-62113B87377F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D78931E-3000-4802-AFCE-62113B87377F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

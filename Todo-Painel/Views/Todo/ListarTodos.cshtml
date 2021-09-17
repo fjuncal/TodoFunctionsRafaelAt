@@ -1,0 +1,91 @@
+﻿@model List<Todo_Painel.Models.TodoItem>
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    var listaTodos = Model;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+      <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+      <link rel="stylesheet" href="~/css/site.css"/>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>ListarTodos</title>
+</head>
+<body>
+<div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <table class="table table-bordered">
+          <thead>
+          <tr>
+            <th scope="col">Responsável</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Status</th>
+            <th scope="col">Data Atividade</th>
+            <th scope="col">Ações</th>
+
+          </tr>
+          </thead>
+          <tbody>
+          @foreach (var todo in listaTodos)
+          {
+            <a href="/editarTodo">
+              <tr>
+                <td>@todo.Responsavel</td>
+                <td>@todo.Nome</td>
+                <td>@todo.Descricao</td>
+                @{
+                  if (@todo.EstaFeita == false)
+                  {
+                    <td style="color: #a71d2a">Atividade Incompleta
+                        <form action="/alterarStatus" method="post">
+                          <input type="hidden" value="@todo.Id" name="id">
+                          <input type="submit" class="btn btn-success" value="Alterar Status">
+                        </form>
+                    </td>
+                  }
+                  else
+                  {
+                    <td style="color: #1e7e34">Atividade Completa
+                        <form action="/alterarStatus" method="post">
+                          <input type="hidden" value="@todo.Id" name="id">
+                          <input type="submit" class="btn btn-danger" value="Alterar Status">
+                        </form>
+                     </td>
+                  }
+                  
+                  
+                 
+                }
+                <td>@todo.DataAtividade</td>
+                <td>
+                  <form action="/editarTodo" method="post">
+                    <input type="hidden" value="@todo.Id" name="id">
+                    <input type="submit" class="btn btn-primary" value="Editar">
+                  </form>
+                  <form action="/removerTodo" method="post">
+                    <input type="hidden" value="@todo.Id" name="id">
+                    <input type="submit" class="btn btn-danger" value="Remover">
+                  </form>
+                  <form action="/expandirTodo" method="get">
+                    <input type="hidden" value="@todo.Id" name="id">
+                    <input type="submit" class="btn btn-success" value="Expandir">
+                  </form>
+                </td>
+              </tr>
+            </a>
+          }
+          </tbody>
+        </table>
+        </div>
+      </div>
+  </div>
+</div>
+</body>
+</html>
